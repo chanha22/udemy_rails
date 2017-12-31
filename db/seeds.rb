@@ -48,3 +48,11 @@ end
   )
 end
 puts "9개의 portfolio가 생성되었습니다"
+
+3.times do |technology|
+  Portfolio.last.technologies.create!(
+    name: "Technology #{technology}"
+  )
+end
+
+puts "3개의 technology가 생성되었습니다"
