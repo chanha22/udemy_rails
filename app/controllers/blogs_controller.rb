@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
-
+  layout "blog" #blog.html.erb layout을 불러와라
   # GET /blogs
   # GET /blogs.json
   def index
