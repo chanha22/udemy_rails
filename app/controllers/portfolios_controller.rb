@@ -1,5 +1,7 @@
 class PortfoliosController < ApplicationController
   layout 'portfolio'
+  access all: [:show, :index, :angular], user: {except: [:destroy, :create, :new, :update]}, message: "You shall not pass", site_admin: :all
+
   def index
     @portfolio_items = Portfolio.all
   end
@@ -31,7 +33,7 @@ class PortfoliosController < ApplicationController
 
   def edit
     @portfolio_item = Portfolio.find(params[:id])
-    
+
   end
 
   def update
