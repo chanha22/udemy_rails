@@ -59,4 +59,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'friendly_id'
 gem 'devise'
 gem 'chanha_view_tool', git: 'https://github.com/chanha22/first_gem'
-gem 'petergate', '~> 1.7'
+gem 'petergate'
