@@ -15,4 +15,9 @@ module ApplicationHelper
       content_tag(:p, greeting, class: "source-greeting")
     end
   end
+
+  def copyright_generator
+    @copyright =
+    "&copy; #{Time.now.year} | <b>Chanha Lee</b> All right reserved".html_safe   
+  end
 end

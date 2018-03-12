@@ -8,6 +8,6 @@ class ApplicationController < ActionController::Base
   before_action :set_copyright
 
   def set_copyright
-    @copyright = ChanhaViewTool::Renderer.copyright 'Chanha lee', "All right reserved"
+    #@copyright = ChanhaViewTool::Renderer.copyright 'Chanha lee', "All right reserved"
   end
 end
