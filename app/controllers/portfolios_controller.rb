@@ -3,7 +3,7 @@ class PortfoliosController < ApplicationController
   access all: [:show, :index, :angular], user: {except: [:destroy, :create, :new, :update]}, message: "You shall not pass", site_admin: :all
 
   def index
-    @portfolio_items = Portfolio.all
+    @portfolio_items = Portfolio.by_position
   end
 
   def angular
