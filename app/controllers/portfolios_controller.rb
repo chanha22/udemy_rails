@@ -71,7 +71,9 @@ class PortfoliosController < ApplicationController
 
   private # 이 아래의 메소드들은 이 class 안에서만 사용 가능
   def portfolio_params
-    params.require(:portfolio).permit(:title, :subtitle, :body, technologies_attributes: [:name])
+    params.require(:portfolio).permit(:title, :subtitle, :body,
+                                  :thumb_image, :main_image,
+                                  technologies_attributes: [:name])
   end
 
 end
