@@ -1,5 +1,5 @@
 class BlogsController < ApplicationController
-  before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
+  before_action :set_blog, only: [:edit, :update, :destroy, :toggle_status]
   layout "blog" #blog.html.erb layout을 불러와라
   access all: [:show, :index], user: {except: [:destroy, :create, :new, :update]}, message: "You shall not pass", site_admin: :all
   # GET /blogs
@@ -12,6 +12,9 @@ class BlogsController < ApplicationController
   # GET /blogs/1
   # GET /blogs/1.json
   def show
+    @blog = Blog.includes(:comments).friendly.find(params[:id])
+    @comment = Comment.new
+
     @page_title = @blog.title
     @seo_keywords = @blog.body
   end
